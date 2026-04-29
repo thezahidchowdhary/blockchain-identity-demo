@@ -1,16 +1,26 @@
-export default function Home() {
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
-      <h1 className="text-3xl mb-6 font-bold">
-        Blockchain Identity System
-      </h1>
-
-      <a
-        href="/register"
-        className="bg-purple-600 px-6 py-3 rounded hover:bg-purple-700"
-      >
-        Go to Register Page
-      </a>
-    </div>
-  );
+{
+  "name": "my-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.2.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
 }
