@@ -3,21 +3,17 @@ const cors = require("cors");
 const crypto = require("crypto");
 
 const app = express();
-
 app.use(cors());
 app.use(express.json());
 
-// ✅ ADD THIS (VERY IMPORTANT)
-app.get("/", (req, res) => {
-  res.send("Backend is running ✅");
-});
-
 const identities = {};
 
+// hash function
 function hashData(data) {
   return crypto.createHash("sha256").update(data).digest("hex");
 }
 
+// register route
 app.post("/register", (req, res) => {
   const { name, aadhar, phone } = req.body;
 
@@ -32,8 +28,9 @@ app.post("/register", (req, res) => {
   res.json({ success: true, message: "Identity registered!" });
 });
 
-const PORT = process.env.PORT || 5001;
+// ✅ IMPORTANT PART
+const PORT = process.env.PORT || 10000;
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
